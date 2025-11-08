@@ -1,0 +1,15 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xtrtle304/crakedscriptzzz/refs/heads/main/eqrloader/126f"))()
+for i,v in getgc(true) do
+    if type(v) == "table" and rawget(v, "permanentkeyforyou") then
+        setmetatable(v, {
+            __index = function(self, ind)
+                return {
+                Expiration = "9999-01-01",
+                HWIDs = {
+                    [game:GetService("RbxAnalyticsService"):GetClientId()] = true
+                }
+                }
+            end
+        })
+    end
+end
